@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "antd";
 
 interface User {
     uid: string;
@@ -24,13 +25,10 @@ export const Usuario = () => {
     return (
         <div>
             <h3>Usuario: {user?.name} </h3>
-            <button
-                onClick={login}
-                className="btn btn-outline-primary">
-                Login
-            </button>
+            <Button onClick={login} type="primary" shape="round" size="large" style={{ marginLeft: 8 }}>LOGIN</Button>
+
             {
-                user ? <pre> {JSON.stringify(user)} </pre> : <pre>No existe ningún usuario</pre>
+                user ? <pre style={{ marginTop: 8 }}> {JSON.stringify(user)} </pre> : <pre style={{ marginTop: 8 }} >No existe ningún usuario</pre>
             }
             
         </div>

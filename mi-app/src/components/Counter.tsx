@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Button } from "antd";
+import { StockOutlined } from '@ant-design/icons';
 
 export const Counter = () => {
 
@@ -9,14 +11,13 @@ export const Counter = () => {
     }
 
     return (
-        <div className="mt-5">
-            <h3>Counter: useState</h3>
+        <div className="my-5">
+            <h3>Counter</h3>
             <span>Valor: {counter} </span>
             <br />
-            <button onClick={() => incrementar(1)} className="btn btn-outline-primary mt-2">+1</button>
-            <button onClick={() => incrementar(2)} className="btn btn-outline-primary mt-2">+2</button>
-            <button onClick={() => setCounter(0)} className="btn btn-outline-danger mt-2">RESET</button>
-
+            <Button onClick={() => incrementar(1)} type="primary" style={{ marginLeft: 8 }}>+1</Button>
+            <Button onClick={() => incrementar(1)} type="default" style={{ marginLeft: 8 }}>+2</Button>
+            <Button onClick={() => setCounter(0)} type="primary" ghost icon={<StockOutlined />} size="small" style={{ background: "red", borderColor: "yellow", color:"white", fontWeight:"600" }}>RESET</Button>
         </div>
     )
 }
