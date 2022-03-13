@@ -2,6 +2,7 @@ import { Counter } from "./components/Counter";
 import { Usuario } from "./components/Usuario";
 import { TimerPadre } from "./components/TimerPadre";
 import { Typography, version, Row, Col, Divider } from "antd";
+import { ContadorRed } from "./components/ContadorRed";
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
       <Col span={20} offset={2}>
         <Divider orientation="left">useEffect</Divider>
         <TimerPadre />
+      </Col>
+
+      <Col span={20} offset={2}>
+        <Divider orientation="right">useReducer</Divider>
+        <ContadorRed />
       </Col>
     </Row>
   );
