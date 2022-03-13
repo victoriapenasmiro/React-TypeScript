@@ -1,13 +1,26 @@
 import { Typography } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export const Timer = () => {
+type TimerArgs = {
+    milisegundos: number
+}
+
+export const Timer = ( { milisegundos }: TimerArgs ) => {
 
     const [segundos, setSegundos] = useState(0);
+    const ref = useRef<NodeJS.Timer>(); //NodeJS.Timer es el tipo de dato que retorna la functión setInterval
+
+    console.log(milisegundos);
 
     useEffect(() => {
-        //cada segudo se ejecuta esta función
-        setInterval(() => setSegundos( s => s + 1), 1000);
+
+        if (ref.current) clearInterval(ref.current);
+        
+        //--> forma abreviada del condicional:
+        //ref.current && clearInterval(ref.current);
+
+        //segun el valor de miisegundos se ejecuta el setinterval
+        ref.current = setInterval(() => setSegundos( s => s + 1), milisegundos);
     }, []);
 ;
     return (
