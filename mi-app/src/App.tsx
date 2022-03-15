@@ -3,6 +3,8 @@ import { Usuario } from "./components/Usuario";
 import { TimerPadre } from "./components/TimerPadre";
 import { Typography, version, Row, Col, Divider } from "antd";
 import { ContadorRed } from "./components/ContadorRed";
+import { Formulario2 } from "./components/Formulario2";
+import { Formulario } from "./components/Formulario";
 
 function App() {
   return (
@@ -21,6 +23,16 @@ function App() {
       <Col span={20} offset={2}>
         <Divider orientation="right">useReducer</Divider>
         <ContadorRed />
+      </Col>
+
+      <Col span={20} offset={2}>
+        <Divider orientation="left">Custom Hooks</Divider>
+        <Formulario2 />
+      </Col>
+
+      <Col span={20} offset={2} style={{marginBottom: "120px"}}>
+        <Divider orientation="left">Custom Hooks</Divider>
+        <Formulario />
       </Col>
     </Row>
   );
